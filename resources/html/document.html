@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block head %}
+{% with title=document.title %}
+  {% include "metatags.html" with title=title  description="Read on Zinemite." %}
+{% endwith %}
+{% endblock %}
+
+{% block content %}
+<div class="row">
+    <h2 class="mt-5">{{ document.title }}</h2>
+    <h6 class="lead">{{ document.created_at }}</h6>
+    <a class="mt-3" href="{{ document.path }}">Download</a>
+    <object class="mt-3 vw-100 vh-100" data="{{ document.path }}" type="{{ document.mime }}">
+        <embed class="mt-3 vw-100 vh-100" src="{{ document.path }}" type="{{ document.mime }}">
+            <p class="mt-3">This browser does not support inline viewing. Please download to view.</p>
+        </embed>
+    </object>
+</div>
+{% endblock %}

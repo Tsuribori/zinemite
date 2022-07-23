@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% block head %}
+        {% include "metatags.html" with title="Zinemite" description="Host Zines" %}
+    {% endblock %}
+
+    <!-- styles -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <!-- navbar -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbard-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="/">Zinemite</a>
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/upload">Upload</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main class="container" role="main">
+        {% block content %}{% endblock %}
+    </main>
+    <footer class="fixed-bottom">
+        <div class="container text-center">
+            {{ footer-content|safe }}
+        </div>
+    </footer>
+</body>
+</html>

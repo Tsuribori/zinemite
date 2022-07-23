@@ -1,0 +1,1 @@
+ALTER TABLE document ADD COLUMN mime TEXT NOT NULL DEFAULT 'application/octet-stream';
